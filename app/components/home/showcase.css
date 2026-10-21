@@ -1,0 +1,296 @@
+.showcase {
+  width: 100%;
+}
+
+.showcase-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.showcase-label {
+  margin-bottom: 1rem;
+  color: var(--deep);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.showcase-title {
+  color: var(--ink);
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0.01rem;
+  line-height: 1;
+}
+
+.showcase-hint {
+  color: var(--deep);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+/* Flex layout */
+.showcase-list {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.showcase-item {
+  display: block;
+  flex: 3 1 0;
+  min-width: 0;
+  overflow: hidden;
+  transition: flex 500ms ease;
+}
+
+.showcase-list:hover .showcase-item,
+.showcase-list:focus-within .showcase-item {
+  flex: 1 1 0;
+}
+
+.showcase-list .showcase-item:hover,
+.showcase-list .showcase-item:focus-within {
+  flex: 5 1 0;
+}
+
+/* First item is expanded by default */
+.showcase-list:not(:hover):not(:focus-within) .showcase-item-initial {
+  flex: 15 1 0;
+}
+
+/* Image */
+.showcase-image {
+  position: relative;
+  width: 100%;
+  height: 35rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: var(--deep);
+}
+
+.showcase-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showcase-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(0 0 0 / 70%), transparent);
+  pointer-events: none;
+}
+
+/* Collapsed vertical title */
+.showcase-vertical-title {
+  position: absolute;
+  right: 0.1rem;
+  bottom: 1rem;
+  margin: 0;
+  color: #e2e0de;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.01rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  transform-origin: center;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 150ms ease,
+    visibility 150ms ease;
+}
+
+/* Hide vertical title on the expanded item */
+.showcase-item:hover .showcase-vertical-title,
+.showcase-item:focus-within .showcase-vertical-title,
+.showcase-list:not(:hover):not(:focus-within)
+  .showcase-item-initial
+  .showcase-vertical-title {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Expanded content */
+.showcase-content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(1rem);
+}
+
+/* Clickable title and external-link icon */
+.showcase-title-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  max-width: 100%;
+  color: white;
+  text-decoration: none;
+}
+
+.showcase-title-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.showcase-title-link:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+.showcase-horizontal-title {
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.1;
+}
+
+.showcase-external-icon {
+  flex-shrink: 0;
+  transition: transform 200ms ease;
+}
+
+.showcase-title-link:hover .showcase-external-icon {
+  transform: translate(2px, -2px);
+}
+
+.showcase-content p {
+  margin-top: 0.375rem;
+  color: rgb(255 255 255 / 85%);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+/* Reveal text after the width animation */
+.showcase-item:hover .showcase-content,
+.showcase-item:focus-within .showcase-content,
+.showcase-list:not(:hover):not(:focus-within)
+  .showcase-item-initial
+  .showcase-content {
+  animation: showcase-content-reveal 350ms ease 500ms both;
+}
+
+@keyframes showcase-content-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+/* Tablet */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .showcase-image {
+    height: 26rem;
+  }
+
+  .showcase-list {
+    gap: 0.5rem;
+  }
+
+  .showcase-vertical-title {
+    font-size: 2rem;
+  }
+
+  .showcase-horizontal-title {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 639px) {
+  .showcase-header {
+    gap: 1rem;
+  }
+
+  .showcase-title {
+    font-size: 3rem;
+  }
+
+  .showcase-hint {
+    max-width: 5rem;
+    text-align: right;
+  }
+
+  .showcase-list {
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .showcase-item {
+    flex: 0 0 13rem;
+    scroll-snap-align: start;
+  }
+
+  .showcase-list:hover .showcase-item,
+  .showcase-list:focus-within .showcase-item,
+  .showcase-list .showcase-item:hover,
+  .showcase-list .showcase-item:focus-within,
+  .showcase-list:not(:hover):not(:focus-within) .showcase-item-initial {
+    flex: 0 0 13rem;
+  }
+
+  .showcase-image {
+    height: 30rem;
+  }
+
+  .showcase-vertical-title {
+    font-size: 2.25rem;
+  }
+
+  .showcase-horizontal-title {
+    font-size: 1.5rem;
+  }
+
+  .showcase-item:hover .showcase-content,
+  .showcase-item:focus-within .showcase-content,
+  .showcase-list:not(:hover):not(:focus-within)
+    .showcase-item-initial
+    .showcase-content {
+    animation-delay: 0ms;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .showcase-item,
+  .showcase-vertical-title,
+  .showcase-external-icon {
+    transition: none;
+  }
+
+  .showcase-item:hover .showcase-content,
+  .showcase-item:focus-within .showcase-content,
+  .showcase-list:not(:hover):not(:focus-within)
+    .showcase-item-initial
+    .showcase-content {
+    animation: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
