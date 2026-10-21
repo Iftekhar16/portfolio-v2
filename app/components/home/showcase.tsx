@@ -95,7 +95,7 @@ export const Showcase = () => (
               <h3
                 className={[
                   "absolute bottom-4 right-[0.1rem] m-0 origin-center rotate-180 visible opacity-100",
-                  "text-[2.25rem] font-bold tracking-[0.01rem] text-[#e2e0de] sm:text-[2rem] lg:text-[3rem]",
+                  "text-[2.25rem] font-bold tracking-[0.01rem] text-[var(--bg)] sm:text-[2rem] lg:text-[3rem]",
                   "[writing-mode:vertical-rl]",
                   "transition-[opacity,visibility] duration-150 ease-[ease] motion-reduce:transition-none",
                   verticalTitleHidden,
@@ -118,7 +118,7 @@ export const Showcase = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Open ${item.title} in a new tab`}
-                  className="group/link inline-flex w-fit max-w-full items-center gap-2 text-white no-underline hover:underline hover:underline-offset-4 focus-visible:outline-offset-4 focus-visible:[outline:2px_solid_white]"
+                  className="group/link inline-flex w-fit max-w-full items-center gap-2 text-[var(--bg)] no-underline hover:underline hover:underline-offset-4 focus-visible:outline-offset-4 focus-visible:[outline:2px_solid_white]"
                 >
                   <h3 className="m-0 text-[1.5rem] font-normal leading-[1.1] tracking-[normal] text-inherit [font-family:inherit] sm:text-[2rem] lg:text-[1.5rem]">
                     {item.title}
@@ -131,7 +131,7 @@ export const Showcase = () => (
                   />
                 </a>
 
-                <p className="mt-1.5 text-sm font-normal leading-[1.625] text-white/[85%]">
+                <p className="mt-1.5 text-sm font-normal leading-[1.625] text-[var(--bg)]/[90%]">
                   {item.subtitle}
                 </p>
               </div>

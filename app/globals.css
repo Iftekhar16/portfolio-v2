@@ -11,9 +11,10 @@
 }
 
 ::selection {
-  background: #5689d9;
-  color: #fff;
+  background-color: #a9443f;
+  color: #e7e5e3;
 }
+
 html,
 body {
   margin: 0;
@@ -37,6 +38,7 @@ h4,
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 @media (pointer: fine) {
   body,
   a,
