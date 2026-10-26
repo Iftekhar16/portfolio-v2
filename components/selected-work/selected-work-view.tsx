@@ -74,18 +74,15 @@ export const SelectedWorkView = () => {
           <button
             key={item.slug}
             onClick={() => goTo(index)}
-            className={`flex gap-2 uppercase tracking-[.16em] transition-[font-size,font-weight,color] duration-200 ease-out ${active === index ? "text-[10px] font-semibold text-[var(--deep)]" : "text-[9px] font-normal text-[var(--ink)]"}`}
+            className={`group relative flex gap-2 uppercase tracking-[.16em] transition-[font-size,font-weight,color] duration-200 ease-out ${active === index ? "text-[10px] font-semibold text-[var(--deep)]" : "text-[9px] font-normal text-[var(--ink)]"}`}
           >
             <span>0{index + 1}</span>
             <span>{item.name}</span>
+            <span aria-hidden="true" className={`absolute -bottom-1 right-0 h-px w-full origin-right bg-current transition-transform duration-500 ease-out ${active === index ? "scale-x-100" : "scale-x-0"}`} />
           </button>
         ))}
       </nav>
-      <div className="fixed bottom-8 left-[6vw] z-30 text-[9px] uppercase tracking-[.2em] text-[var(--deep)]">
-        {active + 1} / {projects.length}{" "}
-        <span className="ml-3">Scroll to explore â†“</span>
-      </div>
-      <main className="flex min-h-screen items-center justify-center overflow-hidden px-6 py-24 sm:px-[6vw]">
+      <main className="flex min-h-screen items-center justify-center px-6 py-24 sm:px-[6vw]">
         <AnimatePresence mode="wait">
           <ProjectDetail key={project.slug} project={project} />
         </AnimatePresence>

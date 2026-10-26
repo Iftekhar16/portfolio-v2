@@ -16,7 +16,7 @@ export const StackSection = () => (
       {skillGroups.map((group, groupIndex) => (
         <div
           key={group.name}
-          className="grid gap-4 border-t border-[var(--ink)] py-4 sm:grid-cols-[190px_1fr] sm:items-center"
+          className="grid gap-4 border-t border-[var(--ink)] py-6 mb-0 sm:grid-cols-[190px_1fr] sm:items-center"
         >
           <h3 className="text-sm uppercase tracking-[.12em] text-[var(--deep)]">
             {group.name}

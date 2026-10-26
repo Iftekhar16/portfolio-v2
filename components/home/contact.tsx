@@ -6,9 +6,9 @@ export const Contact = () => (
       Have an idea?
     </p>
     <h2 className="mb-9 text-6xl font-black leading-[.85] tracking-[-.09em] text-[var(--ink)] sm:text-8xl">
-      LET&apos;S MAKE
+      LET&apos;S MAKE SOMETHING
       <br />
-      <em className="not-italic text-[var(--deep)]">SOMETHING.</em>
+      <em className="not-italic text-[var(--deep)]">WORTH KEEPING.</em>
     </h2>
     <Button href="mailto:iftekharhossain16@gmail.com">Say Hello!</Button>
   </div>

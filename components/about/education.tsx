@@ -1,5 +1,5 @@
 const education = [
-  ["B.Sc in C.S.E", "East West University", "2020 â€” 2024"],
+  ["B.Sc in C.S.E", "East West University", "2020 - 2024"],
   ["H.S.C", "Dr. Mahbubur Rahman Mollah College", "2019"],
   ["S.S.C", "Dolairpar High School", "2017"],
 ];
@@ -7,7 +7,7 @@ const education = [
 export const Education = () => (
   <div className="max-w-5xl">
     <p className="mb-5 text-[10px] uppercase tracking-[.2em] text-[var(--deep)]">
-      03 / 04 â€” Education
+      03 / 04 Education
     </p>
     <h2 className="mb-10 text-6xl font-black tracking-[-.09em] text-[var(--ink)] sm:text-8xl">
       EDUCATION
@@ -20,8 +20,8 @@ export const Education = () => (
         >
           <span className="text-xs text-[var(--deep)]">0{index + 1}</span>
           <div>
-            <p className="text-xl text-[var(--ink)]">{degree}</p>
-            <p className="mt-1 text-sm text-[var(--deep)]">{school}</p>
+            <p className="text-lg font-semibold text-[var(--ink)]">{degree}</p>
+            <p className="text-sm text-[var(--deep)]">{school}</p>
           </div>
           <span className="text-xs uppercase tracking-[.12em] text-[var(--deep)] sm:text-right">
             {years}

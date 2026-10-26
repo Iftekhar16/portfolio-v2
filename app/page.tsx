@@ -2,15 +2,17 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Contact } from "./components/home/contact";
-import { Hero } from "./components/home/hero";
-import { SelectedWork } from "./components/home/selected-work";
-import { StackSection } from "./components/home/stack-section";
-import { Summary } from "./components/home/summary";
-import { Showcase } from "./components/home/showcase";
-import { Header } from "./components/shared/header";
-import { Loader } from "./components/shared/loader";
-import { ThemeCanvas } from "./components/shared/theme-canvas";
+import { Contact } from "../components/home/contact";
+import { Hero } from "../components/home/hero";
+import { SelectedWork } from "../components/home/selected-work";
+import { StackSection } from "../components/home/stack-section";
+import { Summary } from "../components/home/summary";
+import { Showcase } from "../components/home/showcase";
+import { Header } from "../components/shared/header";
+import { Loader } from "../components/shared/loader";
+import { ThemeCanvas } from "../components/shared/theme-canvas";
+import { MobileHomeView } from "../components/mobile/mobile-home-view";
+import { useDesktopLayout } from "../components/shared/use-desktop-layout";
 
 const sections = [
   "home",
@@ -93,10 +95,16 @@ const HomeView = () => {
           <button
             key={name}
             onClick={() => goTo(index)}
-            className={`flex gap-2 uppercase tracking-[.16em] transition-[font-size,font-weight,color] duration-200 ease-out ${active === index ? "text-[12px] font-semibold text-[var(--deep)]" : "text-[9px] font-normal text-[var(--deep)]"}`}
+            // className={`flex gap-2 uppercase tracking-[.16em] transition-[font-size,font-weight,color] duration-200 ease-out ${active === index ? "text-[12px] font-semibold text-[var(--deep)]" : "text-[9px] font-normal text-[var(--deep)]"}`}
+            className={`group relative flex gap-2 uppercase tracking-[.16em] transition-all duration-200 ease-out hover:-translate-x-2 hover:text-[var(--ink)] ${
+              active === index
+                ? "text-[10px] font-semibold text-[var(--deep)]"
+                : "text-[9px] font-normal text-[var(--deep)]"
+            }`}
           >
             <span>0{index + 1}</span>
             <span>{name}</span>
+            <span aria-hidden="true" className={`absolute -bottom-1 right-0 h-px w-full origin-right bg-current transition-transform duration-500 ease-out ${active === index ? "scale-x-100" : "scale-x-0"}`} />
           </button>
         ))}
       </nav>
@@ -128,8 +136,10 @@ const HomeView = () => {
   );
 };
 
-const page = () => {
-  return <HomeView />;
+const Page = () => {
+  const isDesktop = useDesktopLayout();
+  if (isDesktop === null) return null;
+  return isDesktop ? <HomeView /> : <MobileHomeView />;
 };
 
-export default page;
+export default Page;

@@ -78,9 +78,6 @@ export const AboutView = () => {
           </button>
         ))}
       </nav>
-      <div className="fixed bottom-8 left-[6vw] z-30 text-[9px] uppercase tracking-[.2em] text-[var(--deep)]">
-        {active + 1} / 04 <span className="ml-3">Scroll to explore â†“</span>
-      </div>
       <main className="flex min-h-screen items-center justify-center overflow-hidden px-6 py-24 sm:px-[6vw]">
         <AnimatePresence mode="wait">
           <motion.section

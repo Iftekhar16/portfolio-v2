@@ -28,7 +28,7 @@ export const ProjectDetail = ({ project }: { project: Project }) => (
     </motion.div>
     <div>
       <p className="mb-4 text-[10px] uppercase tracking-[.2em] text-[var(--deep)]">
-        {project.number} / 04 â€” {project.type}
+        {project.number} / 04 {project.type}
       </p>
       <h1 className="mb-6 text-7xl font-black tracking-[-.1em] text-[var(--ink)] sm:text-9xl">
         {project.name}
@@ -43,10 +43,7 @@ export const ProjectDetail = ({ project }: { project: Project }) => (
         href="#"
         className="group inline-flex items-center gap-4 border-b border-[var(--ink)] pb-3 text-[10px] uppercase tracking-[.18em] text-[var(--deep)]"
       >
-        View project{" "}
-        <span className="text-lg transition-transform group-hover:translate-x-2">
-          â†—
-        </span>
+        View project
       </Link>
     </div>
   </motion.section>

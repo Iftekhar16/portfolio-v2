@@ -88,6 +88,7 @@ export const Showcase = () => (
                 sizes="(max-width: 639px) 13rem, 25vw"
                 className="block h-full w-full object-cover"
               />
+              {/* <div className="bg-green-300 w-full h-full relative z-10" /> */}
 
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgb(0_0_0/70%),transparent)]" />
 

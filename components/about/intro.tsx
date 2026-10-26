@@ -1,7 +1,7 @@
 export const Intro = () => (
   <div className="max-w-4xl">
     <p className="mb-5 text-[10px] uppercase tracking-[.2em] text-[var(--deep)]">
-      01 / 04 â€” About
+      01 / 04 About
     </p>
     <h1 className="mb-7 text-7xl font-black leading-[.82] tracking-[-.1em] text-[var(--ink)] sm:text-9xl">
       ABOUT
