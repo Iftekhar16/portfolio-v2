@@ -61,7 +61,7 @@ export const SelectedWork = () => (
 
             <div className="mt-5 z-10">
               <div className="mb-5 flex flex-wrap gap-1.5">
-                {[...project.stack, ...(project.tags ?? [])].map((tag) => (
+                {project.stack.map((tag) => (
                   <span
                     key={tag}
                     className="rounded-full border border-[var(--deep)]/25 px-2 py-1 text-[9px] uppercase tracking-[.08em] text-[var(--deep)]"
