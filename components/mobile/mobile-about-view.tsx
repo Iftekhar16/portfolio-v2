@@ -5,7 +5,6 @@ import { Education } from "../about/education";
 import { Experience } from "../about/experience";
 import { Intro } from "../about/intro";
 import { Header } from "../shared/header";
-import { LenisScroll } from "../shared/lenis-scroll";
 import { ThemeCanvas } from "../shared/theme-canvas";
 
 const sectionClass =
@@ -13,7 +12,6 @@ const sectionClass =
 
 export const MobileAboutView = () => (
   <ThemeCanvas>
-    <LenisScroll />
     <Header />
     <main className="relative z-10 divide-y divide-[var(--ink)]/20">
       <section className={sectionClass}>

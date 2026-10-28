@@ -6,17 +6,34 @@ const education = [
 
 export const Education = () => (
   <div className="max-w-5xl">
-    <p className="mb-5 text-[10px] uppercase tracking-[.2em] text-[var(--deep)]">
+    <motion.p
+      initial={{ opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="mb-5 text-[10px] uppercase tracking-[.2em] text-[var(--deep)]"
+    >
       03 / 04 Education
-    </p>
-    <h2 className="mb-10 text-6xl font-black tracking-[-.09em] text-[var(--ink)] sm:text-8xl">
+    </motion.p>
+    <motion.h2
+      initial={{ opacity: 0, y: 22 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+      className="mb-10 text-6xl font-black tracking-[-.09em] text-[var(--ink)] sm:text-8xl"
+    >
       EDUCATION
-    </h2>
+    </motion.h2>
     <div className="border-t border-[var(--ink)]">
       {education.map(([degree, school, years], index) => (
-        <div
+        <motion.div
           key={degree}
-          className="grid gap-3 border-b border-[var(--ink)] py-6 transition-transform hover:translate-x-3 sm:grid-cols-[90px_1fr_120px]"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2 + index * 0.1,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="grid gap-3 border-b border-[var(--ink)] py-6 sm:grid-cols-[90px_1fr_120px]"
         >
           <span className="text-xs text-[var(--deep)]">0{index + 1}</span>
           <div>
@@ -26,8 +43,9 @@ export const Education = () => (
           <span className="text-xs uppercase tracking-[.12em] text-[var(--deep)] sm:text-right">
             {years}
           </span>
-        </div>
+        </motion.div>
       ))}
     </div>
   </div>
 );
+import { motion } from "framer-motion";

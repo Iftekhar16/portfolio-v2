@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 import { showcase } from "../../lib/data";
 
 /**
@@ -48,9 +49,15 @@ export const Showcase = () => (
         <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-[var(--deep)]">
           Design archive
         </p>
-        <h2 className="text-[length:clamp(3rem,7vw,4.5rem)] font-black leading-none tracking-[0.01rem] text-[var(--ink)]">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="text-[length:clamp(3rem,7vw,4.5rem)] font-black leading-none tracking-[0.01rem] text-[var(--ink)]"
+        >
           SHOWCASE
-        </h2>
+        </motion.h2>
       </div>
 
       <span className="text-[10px] uppercase tracking-[0.16em] text-[var(--deep)] max-sm:max-w-20 max-sm:text-right">
@@ -59,13 +66,38 @@ export const Showcase = () => (
     </div>
 
     {/* List */}
-    <div className="group/list flex w-full snap-x snap-mandatory items-start gap-2 overflow-x-auto pb-2 sm:snap-none sm:overflow-visible sm:pb-0 lg:gap-3">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.08,
+            delayChildren: 0.24,
+          },
+        },
+      }}
+      className="group/list flex w-full snap-x snap-mandatory items-start gap-2 overflow-x-auto pb-2 sm:snap-none sm:overflow-visible sm:pb-0 lg:gap-3"
+    >
       {showcase.map((item, index) => {
         const isInitial = index === 0;
 
         return (
-          <div
+          <motion.div
             key={item.title}
+            variants={{
+              hidden: { opacity: 0, x: 24 },
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 0.65,
+                  ease: [0.22, 1, 0.36, 1],
+                },
+              },
+            }}
             className={[
               "group/item block min-w-0 flex-[0_0_13rem] snap-start overflow-hidden transition-[flex] duration-500 ease-[ease] motion-reduce:transition-none",
               // Desktop / tablet flex behavior
@@ -88,6 +120,15 @@ export const Showcase = () => (
                 sizes="(max-width: 639px) 13rem, 25vw"
                 className="block h-full w-full object-cover"
               />
+              {/* <div className="pointer-events-none absolute inset-0 bg-[var(--deep)]/20 opacity-100 transition-opacity duration-300 group-[:is(:hover,:focus-within)]/item:opacity-0" /> */}
+              {/* <div
+                className={[
+                  "pointer-events-none absolute inset-0 bg-[var(--deep)]/20 transition-opacity duration-300",
+                  isInitial
+                    ? "opacity-0 group-[:is(:hover,:focus-within)]/list:opacity-100 group-[:is(:hover,:focus-within)]/item:opacity-0"
+                    : "opacity-100 group-[:is(:hover,:focus-within)]/item:opacity-0",
+                ].join(" ")}
+              /> */}
               {/* <div className="bg-green-300 w-full h-full relative z-10" /> */}
 
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgb(0_0_0/70%),transparent)]" />
@@ -95,7 +136,7 @@ export const Showcase = () => (
               {/* Collapsed vertical title */}
               <h3
                 className={[
-                  "absolute bottom-4 right-[0.1rem] m-0 origin-center rotate-180 visible opacity-100",
+                  "absolute bottom-5 left-1/2 -translate-x-1/2 m-0 origin-center rotate-180 visible opacity-100",
                   "text-[2.25rem] font-bold tracking-[0.01rem] text-[var(--bg)] sm:text-[2rem] lg:text-[3rem]",
                   "[writing-mode:vertical-rl]",
                   "transition-[opacity,visibility] duration-150 ease-[ease] motion-reduce:transition-none",
@@ -137,9 +178,9 @@ export const Showcase = () => (
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         );
       })}
-    </div>
+    </motion.div>
   </section>
 );

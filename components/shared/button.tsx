@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
@@ -7,11 +10,18 @@ export const Button = ({
 }: {
   href: string;
   children: React.ReactNode;
-}) => (
-  <div className="group/button relative inline-block">
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+  <div className="relative inline-block">
     <Link
       href={href}
-      className="group relative z-10 inline-flex h-12 w-44 cursor-pointer touch-manipulation outline-none transition-transform hover:-translate-y-1"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsHovered(true)}
+      onBlur={() => setIsHovered(false)}
+      className="group relative z-10 inline-flex h-12 w-44 cursor-pointer touch-manipulation outline-none"
     >
       <span
         aria-hidden="true"
@@ -27,9 +37,10 @@ export const Button = ({
       </span>
     </Link>
 
-    <div className="pointer-events-none flex items-center gap-1 absolute left-1/2 -translate-x-1/2 top-full translate-y-2 text-[9px] uppercase tracking-[.16em] text-[var(--deep)] opacity-0 transition-all duration-300 ease-out group-hover/button:translate-y-0 group-hover/button:opacity-100">
+    <div className={`pointer-events-none absolute left-1/2 top-full flex -translate-x-1/2 items-center gap-1 text-[9px] uppercase tracking-[.16em] text-[var(--deep)] transition-all duration-300 ease-out ${isHovered ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}>
       <p className="whitespace-nowrap">open mail</p>
       <ExternalLink size={15} strokeWidth={1.3} className="mb-1" />
     </div>
   </div>
-);
+  );
+};

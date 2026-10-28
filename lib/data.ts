@@ -3,68 +3,104 @@ export type Project = {
   number: string;
   name: string;
   type: string;
+  period: string;
   image: string;
   description: string;
   details: string;
   stack: string[];
+  isArchived?: boolean;
+  highlights: string[];
   accent: string;
+  status?: string;
+  url?: string;
 };
 
 export const projects: Project[] = [
   {
-    slug: "pawslyf",
+    slug: "exambinary",
     number: "01",
-    name: "Pawslyf",
-    type: "Community / pet care",
+    name: "Exambinary",
+    type: "Ed-tech platform",
+    period: "November 2025 - June 2026",
     image: "/images/dummy.png",
     description:
-      "A gentle, community-first space for people who care deeply about pets.",
+      "An education platform for exam creation, automated grading, lesson planning, and classroom management.",
     details:
-      "Pawslyf brings pet care, connection, and everyday moments into one warm digital experience. The interface keeps discovery simple and gives the community room to feel human.",
-    stack: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
-    accent: "#d78378",
+      "Developed core modules and tools for teachers to manage learning materials, exams, and recordings, alongside a dedicated parent portal for tracking student progress.",
+    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
+    highlights: [
+      "Built core modules like the library and exam creation modules",
+      "Implemented student-teacher-parent relational features",
+      "Developed lesson planning and classroom management tools",
+    ],
+    accent: "#c76c64",
+    url: "https://exambinary.com/",
   },
   {
-    slug: "exambinary",
+    slug: "pawslyf",
     number: "02",
-    name: "Exambinary",
-    type: "Learning platform",
+    name: "Pawslyf",
+    type: "Veterinary platform",
+    period: "June 2026 - Present",
     image: "/images/dummy.png",
     description:
-      "An exam companion that makes preparation feel focused and calm.",
+      "A comprehensive veterinary platform spanning web, mobile, and backend systems.",
     details:
-      "Exambinary turns a heavy study workflow into a clear sequence of small wins. Its product language is designed to keep learners moving without adding noise.",
-    stack: ["Next.js", "React", "Zod", "TanStack Query"],
-    accent: "#c76c64",
+      "Developing core modules including appointment booking, staff and role management, and service management. Collaborating with the team to architect and implement core workflows across the platform.",
+    stack: ["Next.js", "React Native", "Express.js"],
+    highlights: [
+      "Designed the whole flow and architecture of the system",
+      "Developed core modules like the booking, vet-branch-employee management systems and so on",
+      "Collaborated across web, mobile, and backend systems",
+    ],
+    accent: "#d78378",
+    status: "Currently in development · Live demo not yet available",
   },
   {
     slug: "playrpadel",
     number: "03",
     name: "PlayrPadel",
-    type: "Sports / booking",
+    type: "Management portal",
+    period: "November 2025 - June 2026",
     image: "/images/dummy.png",
     description:
-      "A lively way for players to discover courts and organize games.",
+      "A management portal for court booking, calendar scheduling, and club operations.",
     details:
-      "PlayrPadel makes the social side of the sport feel effortless: find a court, find your people, and get on with the game.",
-    stack: ["React", "Axios", "Tailwind CSS", "Framer Motion"],
+      "Developed court booking and calendar scheduling, club and court management, and employee access control while collaborating with backend and mobile teams to deliver a scalable solution.",
+    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
+    highlights: [
+      "Implemented a comprehensive court booking and calendar scheduling system",
+      "Built club, court, and employee management systems",
+      "Collaborated with backend and mobile teams on delivery",
+    ],
     accent: "#ad514c",
+    isArchived: true,
+    status: "Project discontinued · No live demo available",
   },
   {
     slug: "cdmb",
     number: "04",
     name: "CDMB",
-    type: "Digital product",
+    type: "Institutional Website",
+    period: "Personal project",
     image: "/images/dummy.png",
     description:
-      "A crisp digital product built around useful, considered interactions.",
+      "A custom web application commissioned by an academic institution in Mymensingh.",
     details:
-      "CDMB is a study in restraint: a confident visual system, thoughtful states, and the small details that make a product feel dependable.",
-    stack: ["Next.js", "TypeScript", "Git", "Figma"],
+      "Architected and delivered the system using Django, Tailwind, JavaScript, MySQL, Figma, and a template created by my team and me.",
+    stack: ["Django", "JavaScript", "Tailwind", "MySQL", "Figma"],
+    highlights: [
+      "Architected and delivered a custom academic web application",
+      "Built the system with Django, JavaScript, MySQL, and Tailwind",
+      "Created the project template with my team",
+    ],
     accent: "#e2a39b",
+    isArchived: true,
+    status: "Completed project · Website no longer online",
   },
 ];
 
+projects.sort((a, b) => a.number.localeCompare(b.number));
 export const stack = [
   ["Next.js", "nextdotjs"],
   ["React", "react"],
@@ -133,77 +169,42 @@ export const showcase = [
     title: "Qublet",
     image: "/images/showcase/Qublet.png",
     href: "https://www.behance.net/gallery/198471605/Qublet",
-    subtitle: "A playful interface system shaped around clarity and movement.",
+    subtitle:
+      "AI chatbot UI/UX concept focusing on fluid conversation flows and modern chat components",
   },
   {
     title: "Pharmagic",
     image: "/images/showcase/Pharmagic.jpg",
     href: "https://www.behance.net/gallery/187675127/Pharmagic",
     subtitle:
-      "A friendly digital direction for making healthcare feel more approachable.",
+      "Pharmacy dashboard visual concept designed for clean data visualization and complex workflows",
   },
   {
     title: "Comfy",
     image: "/images/showcase/Comfy.png",
     href: "https://www.behance.net/gallery/192180917/Comfy",
-    subtitle: "Soft visual language and calm interactions for everyday living.",
+    subtitle:
+      "Furniture e-commerce app UI design exploring warm visual tones and seamless shopping interactions",
   },
   {
     title: "coalesce",
     image: "/images/showcase/coalesce.png",
     href: "https://www.behance.net/gallery/188754099/Coalesce",
     subtitle:
-      "A visual study in bringing separate ideas into one coherent product.",
+      "A sleek UI concept for an educational platform, blending bold visual hierarchy with engaging hero sections",
   },
   {
     title: "PageTurner",
     image: "/images/showcase/PageTurner.png",
     href: "https://www.behance.net/gallery/195091559/PageTurner",
     subtitle:
-      "A reading experience designed to make discovery feel effortless.",
+      "Book ordering mobile UI concept featuring clear visual hierarchy and effortless discovery flows",
   },
   {
     title: "note-nott",
     image: "/images/showcase/note-nott.png",
     href: "https://www.behance.net/gallery/188339203/note-nott",
-    subtitle: "A focused notes concept with a tactile, expressive edge.",
-  },
-];
-
-export const themes = [
-  {
-    name: "Rose",
-    bg: "#e7e5e3",
-    ink: "#c45850",
-    deep: "#a9443f",
-    glow: "#e4c9c7",
-  },
-  {
-    name: "Moss",
-    bg: "#e4e7df",
-    ink: "#70825d",
-    deep: "#4b6240",
-    glow: "#cdd8c2",
-  },
-  {
-    name: "Cobalt",
-    bg: "#e1e6ec",
-    ink: "#526b9e",
-    deep: "#354d7e",
-    glow: "#c7d1e3",
-  },
-  {
-    name: "Amber",
-    bg: "#ebe6dc",
-    ink: "#b97942",
-    deep: "#85512e",
-    glow: "#e2d0ae",
-  },
-  {
-    name: "Plum",
-    bg: "#e8e2e8",
-    ink: "#906381",
-    deep: "#67435f",
-    glow: "#d8c3d3",
+    subtitle:
+      "Minimalist note-taking interface study emphasizing clean typography and tactile visual accents",
   },
 ];

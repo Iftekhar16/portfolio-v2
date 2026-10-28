@@ -15,23 +15,30 @@ export const Cursor = () => {
 
   // const x = useSpring(ringX, { stiffness: 120, damping: 20, mass: 0.45 });
   // const y = useSpring(ringY, { stiffness: 120, damping: 20, mass: 0.45 });
-  const x = useSpring(ringX, { stiffness: 500, damping: 25, mass: 0.3 });
-  const y = useSpring(ringY, { stiffness: 500, damping: 25, mass: 0.3 });
-  const scaleX = useSpring(ringScaleX, { stiffness: 260, damping: 24 });
-  const scaleY = useSpring(ringScaleY, { stiffness: 260, damping: 24 });
-  const dotScale = useSpring(dotScaleTarget, { stiffness: 300, damping: 22 });
+  const x = useSpring(ringX, { stiffness: 500, damping: 40, mass: 0.3 });
+  const y = useSpring(ringY, { stiffness: 500, damping: 40, mass: 0.3 });
+  const scaleX = useSpring(ringScaleX, { stiffness: 260, damping: 40 });
+  const scaleY = useSpring(ringScaleY, { stiffness: 260, damping: 40 });
+  const dotScale = useSpring(dotScaleTarget, { stiffness: 300, damping: 40 });
 
   useEffect(() => {
+    if (!window.matchMedia("(pointer: fine) and (min-width: 1024px)").matches) {
+      return;
+    }
+
     let previousX = 0;
     let previousY = 0;
     let previousTime = 0;
     let resetTimer: number | undefined;
+    let hovered: Element | null = null;
 
     const updateHover = (target: EventTarget | null) => {
       if (!(target instanceof Element)) return;
       const clickable = target.closest(
         "a, button, input, textarea, select, summary, [role='button'], [tabindex]:not([tabindex='-1']), [contenteditable='true']",
       );
+      if (clickable === hovered) return;
+      hovered = clickable;
       dotScaleTarget.set(clickable ? 1.7 : 1);
     };
 

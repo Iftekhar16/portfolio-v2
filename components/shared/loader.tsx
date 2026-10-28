@@ -8,6 +8,7 @@ export const Loader = () => (
     aria-label="Loading"
   >
     <div className="absolute inset-0 [background:radial-gradient(circle_at_50%_42%,var(--glow,#e4c9c7),transparent_34%)]" />
+
     <motion.div
       initial={{ scale: 0.7, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
@@ -15,19 +16,30 @@ export const Loader = () => (
       className="relative grid h-36 w-36 place-items-center rounded-full border border-[var(--ink,#c45850)]/30"
     >
       <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-3 rounded-full border border-dashed border-[var(--ink,#c45850)]/60"
+        animate={{ scale: [1, 0.88, 1] }}
+        transition={{
+          duration: 2.4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute inset-3 rounded-full border border-[var(--ink,#c45850)]/60"
       />
+
       <motion.div
-        animate={{ scale: [1, 1.12, 1] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ scale: [1, 1.15, 1] }}
+        transition={{
+          duration: 1.8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
         className="h-16 w-16 rounded-full bg-[var(--ink,#c45850)] shadow-[0_0_70px_var(--glow,#e4c9c7)]"
       />
+
       <span className="absolute -bottom-9 text-[9px] uppercase tracking-[.4em] text-[var(--deep,#a9443f)]">
         Loading
       </span>
     </motion.div>
+
     <div className="grain pointer-events-none fixed inset-[-50%] opacity-[.1]" />
   </div>
 );

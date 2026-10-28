@@ -89,8 +89,8 @@ const HomeView = () => {
       <Header />
       {!ready && <Loader />}
       <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_50%_50%,#fff8f6_0%,transparent_48%)]" />
-      <div className="pointer-events-none fixed -bottom-32 left-0 z-0 h-96 w-1/2 rounded-full bg-[var(--glow)] blur-[90px] motion-safe:animate-pulse" />
-      <nav className="fixed right-[6vw] top-1/2 z-30 hidden -translate-y-1/2 flex-col items-end gap-3 xl:flex">
+      <div className="pointer-events-none fixed -bottom-32 left-0 z-0 h-96 w-1/2 rounded-full bg-[var(--glow)] blur-[90px]" />
+      <nav className="fixed right-[6vw] top-1/2 z-30 hidden -translate-y-1/2 flex-col items-end gap-3 2xl:flex">
         {sections.map((name, index) => (
           <button
             key={name}
@@ -104,7 +104,10 @@ const HomeView = () => {
           >
             <span>0{index + 1}</span>
             <span>{name}</span>
-            <span aria-hidden="true" className={`absolute -bottom-1 right-0 h-px w-full origin-right bg-current transition-transform duration-500 ease-out ${active === index ? "scale-x-100" : "scale-x-0"}`} />
+            <span
+              aria-hidden="true"
+              className={`absolute -bottom-1 right-0 h-px w-full origin-right bg-current transition-transform duration-500 ease-out ${active === index ? "scale-x-100" : "scale-x-0"}`}
+            />
           </button>
         ))}
       </nav>
@@ -115,7 +118,7 @@ const HomeView = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -24 }}
-            transition={{ duration: 0.38, ease: "easeOut" }}
+            transition={{ duration: 0.44, ease: [0.22, 1, 0.36, 1] }}
             className="w-full max-w-6xl"
           >
             {active === 0 && <Hero ready={ready} />}

@@ -7,7 +7,6 @@ import { MobileShowcase } from "./mobile-showcase";
 import { StackSection } from "../home/stack-section";
 import { Summary } from "../home/summary";
 import { Header } from "../shared/header";
-import { LenisScroll } from "../shared/lenis-scroll";
 import { ThemeCanvas } from "../shared/theme-canvas";
 
 const sectionClass =
@@ -15,7 +14,6 @@ const sectionClass =
 
 export const MobileHomeView = () => (
   <ThemeCanvas>
-    <LenisScroll />
     <Header />
     <main className="relative z-10 divide-y divide-[var(--ink)]/20">
       <section className={sectionClass}>

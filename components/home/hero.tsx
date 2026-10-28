@@ -34,11 +34,11 @@ export const Hero = ({ ready }: { ready: boolean }) => (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-      transition={{ delay: 0.2, duration: 0.55 }}
-      className="mt-9 flex max-w-2xl flex-col justify-between gap-5 text-[11px] uppercase tracking-[.14em] text-[var(--deep)] sm:flex-row sm:items-end"
+      transition={{ delay: 0.2, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className="mt-6 flex max-w-2xl flex-col justify-between gap-5 text-[10px] uppercase tracking-[.14em] text-[var(--deep)] sm:flex-row sm:items-end"
     >
       <span>Software engineer</span>
-      <span className="normal-case tracking-[.1em]">
+      <span className="uppercase tracking-[.1em]">
         building intuitive user experiences
       </span>
     </motion.div>

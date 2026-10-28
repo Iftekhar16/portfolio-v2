@@ -2,13 +2,11 @@
 
 import { projects } from "../../lib/data";
 import { Header } from "../shared/header";
-import { LenisScroll } from "../shared/lenis-scroll";
 import { ThemeCanvas } from "../shared/theme-canvas";
 import { MobileProjectDetail } from "./mobile-project-detail";
 
 export const MobileSelectedWorkView = () => (
   <ThemeCanvas>
-    <LenisScroll />
     <Header />
     <main className="relative z-10 px-6 pb-20 pt-32 sm:px-10 sm:pt-40">
       <header className="mb-8">

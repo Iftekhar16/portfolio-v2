@@ -8,32 +8,40 @@ import { ThemeCanvas } from "../shared/theme-canvas";
 import { ProjectDetail } from "./project-detail";
 
 export const SelectedWorkView = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(() => {
+    const queryIndex =
+      typeof window === "undefined"
+        ? -1
+        : Number(new URLSearchParams(window.location.search).get("project"));
+    return Number.isInteger(queryIndex) && queryIndex >= 0 && queryIndex < projects.length
+      ? queryIndex
+      : 0;
+  });
+  const activeRef = useRef(active);
   const lock = useRef(false);
-  const goTo = useCallback(
-    (next: number) => {
-      const target = Math.max(0, Math.min(projects.length - 1, next));
-      if (target === active || lock.current) return;
-      lock.current = true;
-      setActive(target);
-      window.setTimeout(() => {
-        lock.current = false;
-      }, 560);
-    },
-    [active],
-  );
+  const unlockTimer = useRef<number | null>(null);
+
+  const goTo = useCallback((next: number) => {
+    const target = Math.max(0, Math.min(projects.length - 1, next));
+    if (target === activeRef.current || lock.current) return;
+
+    lock.current = true;
+    activeRef.current = target;
+    setActive(target);
+    if (unlockTimer.current !== null) window.clearTimeout(unlockTimer.current);
+    unlockTimer.current = window.setTimeout(() => {
+      lock.current = false;
+      unlockTimer.current = null;
+    }, 420);
+  }, []);
 
   useEffect(() => {
-    const queryIndex = new URLSearchParams(window.location.search).get(
-      "project",
-    );
-    const index = queryIndex === null ? -1 : Number(queryIndex);
-    if (Number.isInteger(index) && index >= 0 && index < projects.length)
-      window.setTimeout(() => setActive(index), 0);
     const wheel = (event: WheelEvent) => {
+      if (Math.abs(event.deltaY) <= 8) return;
+      const next = activeRef.current + (event.deltaY > 0 ? 1 : -1);
+      if (next < 0 || next >= projects.length) return;
       event.preventDefault();
-      if (Math.abs(event.deltaY) > 8)
-        goTo(active + (event.deltaY > 0 ? 1 : -1));
+      goTo(next);
     };
     const touch = { y: 0 };
     const begin = (event: TouchEvent) => {
@@ -41,16 +49,17 @@ export const SelectedWorkView = () => {
     };
     const end = (event: TouchEvent) => {
       const distance = touch.y - event.changedTouches[0].clientY;
-      if (Math.abs(distance) > 30) goTo(active + (distance > 0 ? 1 : -1));
+      if (Math.abs(distance) > 30)
+        goTo(activeRef.current + (distance > 0 ? 1 : -1));
     };
     const key = (event: KeyboardEvent) => {
       if (["ArrowDown", "PageDown", " "].includes(event.key)) {
         event.preventDefault();
-        goTo(active + 1);
+        goTo(activeRef.current + 1);
       }
       if (["ArrowUp", "PageUp"].includes(event.key)) {
         event.preventDefault();
-        goTo(active - 1);
+        goTo(activeRef.current - 1);
       }
     };
     window.addEventListener("wheel", wheel, { passive: false });
@@ -62,8 +71,9 @@ export const SelectedWorkView = () => {
       window.removeEventListener("touchstart", begin);
       window.removeEventListener("touchend", end);
       window.removeEventListener("keydown", key);
+      if (unlockTimer.current !== null) window.clearTimeout(unlockTimer.current);
     };
-  }, [active, goTo]);
+  }, [goTo]);
 
   const project = projects[active];
   return (
