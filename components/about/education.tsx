@@ -5,7 +5,7 @@ const education = [
 ];
 
 export const Education = () => (
-  <div className="max-w-5xl">
+  <div className="max-w-5xl w-full">
     <motion.p
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}

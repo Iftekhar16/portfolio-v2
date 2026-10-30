@@ -50,7 +50,7 @@ export const StackSection = () => (
                       <span
                         role="img"
                         aria-label={`${name} icon`}
-                        className="h-full w-full bg-[var(--deep)] transition-transform duration-300 group-hover:scale-110 max-lg:scale-100 max-lg:transition-none [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain]"
+                        className="h-full w-full bg-[var(--deep)] transition-transform duration-300 max-lg:scale-100 max-lg:transition-none [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain]"
                         style={{
                           WebkitMaskImage: `url(${icon})`,
                           maskImage: `url(${icon})`,

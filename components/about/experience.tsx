@@ -11,7 +11,7 @@ const experience = [
   {
     role: "Junior Software Engineer",
     company: "ExamBinary (formerly NeovoTech)",
-    period: "November 2025 - June 2026",
+    period: "November 2024 - June 2026",
     description:
       "Developed ExamBinary modules for exam creation, automated grading, lesson planning, classroom management, and parent progress tracking. Also developed Playr Padel's booking and management portal.",
   },
