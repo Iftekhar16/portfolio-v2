@@ -66,15 +66,23 @@ export const AboutView = () => {
   return (
     <ThemeCanvas>
       <Header />
-      <nav className="fixed right-[6vw] top-1/2 z-30 hidden -translate-y-1/2 flex-col items-end gap-3 xl:flex">
+      <nav className="fixed right-[6vw] top-1/2 z-30 hidden -translate-y-1/2 flex-col items-end gap-3 2xl:flex">
         {labels.map((label, index) => (
           <button
             key={label}
             onClick={() => goTo(index)}
-            className={`flex gap-2 uppercase tracking-[.16em] transition-[font-size,font-weight,color] duration-200 ease-out ${active === index ? "text-[10px] font-semibold text-[var(--deep)]" : "text-[9px] font-normal text-[var(--ink)]"}`}
+            className={`group relative flex gap-2 uppercase tracking-[.16em] transition-all duration-200 ease-out hover:-translate-x-2 hover:text-[var(--ink)] ${
+              active === index
+                ? "text-[10px] font-semibold text-[var(--deep)]"
+                : "text-[9px] font-normal text-[var(--deep)]"
+            }`}
           >
             <span>0{index + 1}</span>
             <span>{label}</span>
+            <span
+              aria-hidden="true"
+              className={`absolute -bottom-1 right-0 h-px w-full origin-right bg-current transition-transform duration-500 ease-out ${active === index ? "scale-x-100" : "scale-x-0"}`}
+            />
           </button>
         ))}
       </nav>

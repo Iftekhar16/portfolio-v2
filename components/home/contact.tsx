@@ -1,5 +1,5 @@
-import { Button } from "../shared/button";
 import { motion } from "framer-motion";
+import { CopyEmailButton } from "../shared/copy-email-button";
 
 export const Contact = () => (
   <div className="max-w-4xl">
@@ -39,7 +39,7 @@ export const Contact = () => (
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.55, delay: 0.44, ease: [0.22, 1, 0.36, 1] }}
     >
-      <Button href="mailto:iftekharhossain16@gmail.com">Say Hello!</Button>
+      <CopyEmailButton />
     </motion.div>
   </div>
 );

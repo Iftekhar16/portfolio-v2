@@ -1,5 +1,5 @@
-import { Button } from "../shared/button";
 import { motion } from "framer-motion";
+import { CopyEmailButton } from "../shared/copy-email-button";
 
 export const Contact = () => (
   <div className="max-w-4xl">
@@ -11,6 +11,6 @@ export const Contact = () => (
       <br />
       <motion.em initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.28, ease: [0.22, 1, 0.36, 1] }} className="inline-block not-italic text-[var(--deep)]">WORTH KEEPING.</motion.em>
     </h2>
-    <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.44, ease: [0.22, 1, 0.36, 1] }}><Button href="mailto:iftekharhossain16@gmail.com">Say Hello!</Button></motion.div>
+    <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.44, ease: [0.22, 1, 0.36, 1] }}><CopyEmailButton /></motion.div>
   </div>
 );

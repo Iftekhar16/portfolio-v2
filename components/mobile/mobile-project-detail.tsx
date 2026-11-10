@@ -99,15 +99,7 @@ export const MobileProjectDetail = ({ project }: { project: Project }) => (
         ))}
       </ul>
     </motion.div>
-    <motion.p
-      initial={{ opacity: 0, y: 14 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.58, delay: 0.72, ease: [0.22, 1, 0.36, 1] }}
-      className="mb-7 max-w-lg text-sm leading-relaxed text-[var(--deep)]"
-    >
-      {project.details}
-    </motion.p>
+    {/* Project details are intentionally hidden from the selected work view. */}
     {project.url ? (
       <a
         href={project.url}

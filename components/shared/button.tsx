@@ -7,9 +7,13 @@ import Link from "next/link";
 export const Button = ({
   href,
   children,
+  onClick,
+  helperText = "open mail",
 }: {
   href: string;
   children: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  helperText?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -21,6 +25,7 @@ export const Button = ({
       onMouseLeave={() => setIsHovered(false)}
       onFocus={() => setIsHovered(true)}
       onBlur={() => setIsHovered(false)}
+      onClick={onClick}
       className="group relative z-10 inline-flex h-12 w-44 cursor-pointer touch-manipulation outline-none"
     >
       <span
@@ -38,7 +43,7 @@ export const Button = ({
     </Link>
 
     <div className={`pointer-events-none absolute left-1/2 top-full flex -translate-x-1/2 items-center gap-1 text-[9px] uppercase tracking-[.16em] text-[var(--deep)] transition-all duration-300 ease-out ${isHovered ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}>
-      <p className="whitespace-nowrap">open mail</p>
+      <p className="whitespace-nowrap">{helperText}</p>
       <ExternalLink size={15} strokeWidth={1.3} className="mb-1" />
     </div>
   </div>

@@ -96,14 +96,7 @@ export const ProjectDetail = ({ project }: { project: Project }) => (
         ))}
       </ul>
     </motion.div>
-    <motion.p
-      initial={{ opacity: 0, y: 14 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.72, delay: 0.82, ease: [0.22, 1, 0.36, 1] }}
-      className="mb-8 max-w-2xl text-sm leading-relaxed text-[var(--deep)]"
-    >
-      {project.details}
-    </motion.p>
+    {/* Project details are intentionally hidden from the selected work view. */}
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}

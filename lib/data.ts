@@ -24,9 +24,9 @@ export const projects: Project[] = [
     period: "November 2025 - June 2026",
     image: "/images/dummy.png",
     description:
-      "An education platform for exam creation, automated grading, lesson planning, and classroom management.",
+      "An education platform for exam creation, automated grading, lesson planning, and classroom management",
     details:
-      "Developed core modules and tools for teachers to manage learning materials, exams, and recordings, alongside a dedicated parent portal for tracking student progress.",
+      "Developed core modules and tools for teachers to manage learning materials, exams, and recordings, alongside a dedicated parent portal for tracking student progress",
     stack: ["Next.js", "Tailwind CSS", "TypeScript"],
     highlights: [
       "Built core modules like the library and exam creation modules",
@@ -44,9 +44,9 @@ export const projects: Project[] = [
     period: "June 2026 - Present",
     image: "/images/dummy.png",
     description:
-      "A comprehensive veterinary platform spanning web, mobile, and backend systems.",
+      "A comprehensive veterinary platform spanning web, mobile, and backend systems",
     details:
-      "Developing core modules including appointment booking, staff and role management, and service management. Collaborating with the team to architect and implement core workflows across the platform.",
+      "Developing core modules including appointment booking, staff and role management, and service management. Collaborating with the team to architect and implement core workflows across the platform",
     stack: ["Next.js", "React Native", "Express.js"],
     highlights: [
       "Designed the whole flow and architecture of the system",
@@ -64,9 +64,9 @@ export const projects: Project[] = [
     period: "November 2025 - June 2026",
     image: "/images/dummy.png",
     description:
-      "A management portal for court booking, calendar scheduling, and club operations.",
+      "A management portal for court booking, calendar scheduling, and club operations",
     details:
-      "Developed court booking and calendar scheduling, club and court management, and employee access control while collaborating with backend and mobile teams to deliver a scalable solution.",
+      "Developed court booking and calendar scheduling, club and court management, and employee access control while collaborating with backend and mobile teams to deliver a scalable solution",
     stack: ["Next.js", "Tailwind CSS", "TypeScript"],
     highlights: [
       "Implemented a comprehensive court booking and calendar scheduling system",
@@ -85,9 +85,9 @@ export const projects: Project[] = [
     period: "Personal project",
     image: "/images/dummy.png",
     description:
-      "A custom web application commissioned by an academic institution in Mymensingh.",
+      "A custom web application commissioned by an academic institution in Mymensingh",
     details:
-      "Architected and delivered the system using Django, Tailwind, JavaScript, MySQL, Figma, and a template created by my team and me.",
+      "Architected and delivered the system using Django, Tailwind, JavaScript, MySQL, Figma, and a template created by my team and me",
     stack: ["Django", "JavaScript", "Tailwind", "MySQL", "Figma"],
     highlights: [
       "Architected and delivered a custom academic web application",

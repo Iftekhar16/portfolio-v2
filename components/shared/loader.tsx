@@ -40,6 +40,6 @@ export const Loader = () => (
       </span>
     </motion.div>
 
-    <div className="grain pointer-events-none fixed inset-[-50%] opacity-[.1]" />
+    {/* <div className="pointer-events-none fixed inset-[-50%] opacity-[.1]" /> */}
   </div>
 );
