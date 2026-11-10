@@ -89,7 +89,7 @@ const HomeView = () => {
       <Header />
       {!ready && <Loader />}
       <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_50%_50%,#fff8f6_0%,transparent_48%)]" />
-      <div className="pointer-events-none fixed -bottom-32 left-0 z-0 h-96 w-1/2 rounded-full bg-[var(--glow)] blur-[90px]" />
+      <div className="pointer-events-none fixed -bottom-32 -left-20 z-0 h-96 w-1/2 rounded-full bg-[var(--glow)] blur-[90px]" />
       <nav className="fixed right-[6vw] top-1/2 z-30 hidden -translate-y-1/2 flex-col items-end gap-3 2xl:flex">
         {sections.map((name, index) => (
           <button

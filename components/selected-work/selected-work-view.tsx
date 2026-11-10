@@ -13,7 +13,9 @@ export const SelectedWorkView = () => {
       typeof window === "undefined"
         ? -1
         : Number(new URLSearchParams(window.location.search).get("project"));
-    return Number.isInteger(queryIndex) && queryIndex >= 0 && queryIndex < projects.length
+    return Number.isInteger(queryIndex) &&
+      queryIndex >= 0 &&
+      queryIndex < projects.length
       ? queryIndex
       : 0;
   });
@@ -71,7 +73,8 @@ export const SelectedWorkView = () => {
       window.removeEventListener("touchstart", begin);
       window.removeEventListener("touchend", end);
       window.removeEventListener("keydown", key);
-      if (unlockTimer.current !== null) window.clearTimeout(unlockTimer.current);
+      if (unlockTimer.current !== null)
+        window.clearTimeout(unlockTimer.current);
     };
   }, [goTo]);
 
@@ -79,6 +82,7 @@ export const SelectedWorkView = () => {
   return (
     <ThemeCanvas>
       <Header />
+      <div className="pointer-events-none fixed -bottom-32 -left-20 z-0 h-96 w-1/2 rounded-full bg-[var(--glow)] blur-[90px]" />
       <nav className="fixed right-[6vw] top-1/2 z-30 hidden -translate-y-1/2 flex-col items-end gap-3 2xl:flex">
         {projects.map((item, index) => (
           <button
@@ -92,7 +96,10 @@ export const SelectedWorkView = () => {
           >
             <span>0{index + 1}</span>
             <span>{item.name}</span>
-            <span aria-hidden="true" className={`absolute -bottom-1 right-0 h-px w-full origin-right bg-current transition-transform duration-500 ease-out ${active === index ? "scale-x-100" : "scale-x-0"}`} />
+            <span
+              aria-hidden="true"
+              className={`absolute -bottom-1 right-0 h-px w-full origin-right bg-current transition-transform duration-500 ease-out ${active === index ? "scale-x-100" : "scale-x-0"}`}
+            />
           </button>
         ))}
       </nav>

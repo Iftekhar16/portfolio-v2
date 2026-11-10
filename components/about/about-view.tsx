@@ -66,6 +66,7 @@ export const AboutView = () => {
   return (
     <ThemeCanvas>
       <Header />
+      <div className="pointer-events-none fixed -bottom-32 -left-20 z-0 h-96 w-1/2 rounded-full bg-[var(--glow)] blur-[90px]" />
       <nav className="fixed right-[6vw] top-1/2 z-30 hidden -translate-y-1/2 flex-col items-end gap-3 2xl:flex">
         {labels.map((label, index) => (
           <button
