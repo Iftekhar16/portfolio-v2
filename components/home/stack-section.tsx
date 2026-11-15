@@ -5,7 +5,7 @@ import { skillGroups } from "../../lib/data";
 import { skillIcons } from "../svg/skill-icons";
 
 export const StackSection = () => (
-  <div className="mx-auto max-w-5xl">
+  <div className="mx-auto">
     <p className="mb-4 text-[10px] uppercase tracking-[.2em] text-[var(--deep)]">
       Tools of the trade
     </p>
@@ -33,11 +33,6 @@ export const StackSection = () => (
                   key={name}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  // transition={{
-                  //   delay: (groupIndex * 5 + index) * 0.025,
-                  //   duration: 0.45,
-                  //   ease: [0.22, 1, 0.36, 1],
-                  // }}
                   transition={{
                     delay: (groupIndex * 5 + index) * 0.03,
                     duration: 0.8,

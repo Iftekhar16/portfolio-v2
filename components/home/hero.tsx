@@ -39,7 +39,8 @@ export const Hero = ({ ready }: { ready: boolean }) => (
     >
       <span>Software engineer</span>
       <span className="uppercase tracking-[.1em]">
-        building intuitive user experiences
+        {/* building intuitive user experiences */}
+        engineering modern web applications
       </span>
     </motion.div>
   </div>

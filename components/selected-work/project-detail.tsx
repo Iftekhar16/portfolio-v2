@@ -103,21 +103,29 @@ export const ProjectDetail = ({ project }: { project: Project }) => (
       transition={{ duration: 0.7, delay: 0.94, ease: [0.22, 1, 0.36, 1] }}
     >
       {project.url ? (
-        <a
+        <motion.a
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.98, ease: [0.22, 1, 0.36, 1] }}
           className="group inline-flex items-center gap-2 border-b border-[var(--ink)] pb-2 text-[10px] uppercase tracking-[.18em] text-[var(--deep)]"
         >
           View project
           <span className="transition-transform text-lg duration-300 group-hover:translate-x-1">
             ↗
           </span>
-        </a>
+        </motion.a>
       ) : (
-        <p className="max-w-2xl text-sm leading-relaxed text-[var(--deep)]/70">
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.98, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-2xl text-sm leading-relaxed text-[var(--deep)]/70"
+        >
           {project.status}
-        </p>
+        </motion.p>
       )}
     </motion.div>
   </motion.section>

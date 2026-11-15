@@ -87,13 +87,13 @@ export const AboutView = () => {
           </button>
         ))}
       </nav>
-      <main className="flex min-h-screen items-center justify-center overflow-hidden px-6 py-24 sm:px-[6vw]">
+      <main className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-24 sm:px-[6vw]">
         <AnimatePresence mode="wait">
           <motion.section
             key={active}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="w-full max-w-6xl"
           >

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CopyEmailButton } from "../shared/copy-email-button";
+import { SocialLinks } from "../shared/social-links";
 
 export const Contact = () => (
   <div className="max-w-4xl">
@@ -41,5 +42,6 @@ export const Contact = () => (
     >
       <CopyEmailButton />
     </motion.div>
+    <SocialLinks />
   </div>
 );

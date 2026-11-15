@@ -103,7 +103,7 @@ export const SelectedWorkView = () => {
           </button>
         ))}
       </nav>
-      <main className="flex min-h-screen items-center justify-center px-6 py-24 sm:px-[6vw]">
+      <main className="relative z-10 flex min-h-screen items-center justify-center px-6 py-24 sm:px-[6vw]">
         <AnimatePresence mode="wait">
           <ProjectDetail key={project.slug} project={project} />
         </AnimatePresence>

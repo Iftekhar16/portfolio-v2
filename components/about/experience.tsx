@@ -28,7 +28,8 @@ export const Experience = () => (
   <div className="w-full max-w-5xl">
     <motion.p
       initial={{ opacity: 0, y: 14 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="mb-5 text-[10px] uppercase tracking-[.2em] text-[var(--deep)]"
     >
@@ -36,7 +37,8 @@ export const Experience = () => (
     </motion.p>
     <motion.h2
       initial={{ opacity: 0, y: 22 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
       className="mb-10 text-6xl font-black tracking-[-.09em] text-[var(--ink)] sm:text-8xl"
     >
@@ -47,7 +49,8 @@ export const Experience = () => (
         <motion.article
           key={item.role}
           initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{
             duration: 0.5,
             delay: 0.2 + index * 0.1,

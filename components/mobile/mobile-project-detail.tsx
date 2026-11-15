@@ -101,18 +101,28 @@ export const MobileProjectDetail = ({ project }: { project: Project }) => (
     </motion.div>
     {/* Project details are intentionally hidden from the selected work view. */}
     {project.url ? (
-      <a
+      <motion.a
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
+        initial={{ opacity: 0, y: 8 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.56, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
         className="inline-flex items-center gap-4 border-b border-[var(--ink)] pb-3 text-[10px] uppercase tracking-[.18em] text-[var(--deep)]"
       >
         View project <span className="text-lg">→</span>
-      </a>
+      </motion.a>
     ) : (
-      <p className="max-w-lg text-sm leading-relaxed text-[var(--deep)]">
+      <motion.p
+        initial={{ opacity: 0, y: 8 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.56, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
+        className="max-w-lg text-sm leading-relaxed text-[var(--deep)]"
+      >
         {project.status}
-      </p>
+      </motion.p>
     )}
   </motion.article>
 );

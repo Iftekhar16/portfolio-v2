@@ -117,7 +117,8 @@ export const Showcase = () => (
                 alt=""
                 width={1000}
                 height={1000}
-                sizes="(max-width: 639px) 13rem, 25vw"
+                // sizes="(max-width: 639px) 13rem, 25vw"
+                sizes="100vw"
                 className="block h-full w-full object-cover"
               />
               {/* <div className="pointer-events-none absolute inset-0 bg-[var(--deep)]/20 opacity-100 transition-opacity duration-300 group-[:is(:hover,:focus-within)]/item:opacity-0" /> */}
