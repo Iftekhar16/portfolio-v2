@@ -167,7 +167,7 @@ export const skillGroups = [
 export const showcase = [
   {
     title: "Qublet",
-    image: "/images/showcase/Qublet.png",
+    image: "/images/showcase/Qublet.jpg",
     href: "https://www.behance.net/gallery/198471605/Qublet",
     subtitle:
       "AI chatbot UI/UX concept focusing on fluid conversation flows and modern chat components",
@@ -181,28 +181,28 @@ export const showcase = [
   },
   {
     title: "Comfy",
-    image: "/images/showcase/Comfy.png",
+    image: "/images/showcase/Comfy.jpg",
     href: "https://www.behance.net/gallery/192180917/Comfy",
     subtitle:
       "Furniture e-commerce app UI design exploring warm visual tones and seamless shopping interactions",
   },
   {
     title: "coalesce",
-    image: "/images/showcase/coalesce.png",
+    image: "/images/showcase/coalesce.jpg",
     href: "https://www.behance.net/gallery/188754099/Coalesce",
     subtitle:
       "A sleek UI concept for an educational platform, blending bold visual hierarchy with engaging hero sections",
   },
   {
     title: "PageTurner",
-    image: "/images/showcase/PageTurner.png",
+    image: "/images/showcase/PageTurner.jpg",
     href: "https://www.behance.net/gallery/195091559/PageTurner",
     subtitle:
       "Book ordering mobile UI concept featuring clear visual hierarchy and effortless discovery flows",
   },
   {
     title: "note-nott",
-    image: "/images/showcase/note-nott.png",
+    image: "/images/showcase/note-nott.jpg",
     href: "https://www.behance.net/gallery/188339203/note-nott",
     subtitle:
       "Minimalist note-taking interface study emphasizing clean typography and tactile visual accents",
