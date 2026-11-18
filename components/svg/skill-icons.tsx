@@ -1,6 +1,7 @@
 export const skillIcons: Record<string, string> = {
   nextdotjs: "/icons/nextdotjs.svg",
   react: "/icons/react.svg",
+  motion: "/icons/motion.svg",
   typescript: "/icons/typescript.svg",
   "react-native": "/icons/react-native.svg",
   expo: "/icons/expo.svg",

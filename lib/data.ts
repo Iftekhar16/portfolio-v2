@@ -140,6 +140,7 @@ export const skillGroups = [
     name: "UI & Styling",
     items: [
       ["Tailwind CSS", "tailwindcss"],
+      ["Motion", "motion"],
       ["shadcn/ui", "shadcnui"],
     ],
   },

@@ -56,7 +56,7 @@ export const Showcase = () => (
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           className="text-[length:clamp(3rem,7vw,4.5rem)] font-black leading-none tracking-[0.01rem] text-[var(--ink)]"
         >
-          SHOWCASE
+          DESIGN SHOWCASE
         </motion.h2>
       </div>
 

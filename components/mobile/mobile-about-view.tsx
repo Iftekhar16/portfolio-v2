@@ -7,12 +7,14 @@ import { Experience } from "../about/experience";
 import { Intro } from "../about/intro";
 import { Header } from "../shared/header";
 import { ThemeCanvas } from "../shared/theme-canvas";
+import { LenisScroll } from "../shared/lenis-scroll";
 
 const sectionClass =
   "relative flex min-h-[calc(100svh-4rem)] items-center px-6 py-24 sm:px-10 sm:py-28";
 
 export const MobileAboutView = () => (
   <ThemeCanvas>
+    <LenisScroll />
     <Header />
     <main className="relative z-10 divide-y divide-[var(--ink)]/20">
       <motion.section

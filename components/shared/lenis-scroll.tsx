@@ -5,9 +5,15 @@ import Lenis from "lenis";
 
 export const LenisScroll = () => {
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     const lenis = new Lenis({
       smoothWheel: true,
       syncTouch: true,
+      autoRaf: false,
+      prevent: (node) => Boolean(node.closest("[data-lenis-prevent]")),
     });
     let frame = 0;
 

@@ -22,7 +22,7 @@ export const Cursor = () => {
   const dotScale = useSpring(dotScaleTarget, { stiffness: 300, damping: 40 });
 
   useEffect(() => {
-    if (!window.matchMedia("(pointer: fine) and (min-width: 1024px)").matches) {
+    if (!window.matchMedia("(pointer: fine)").matches) {
       return;
     }
 
@@ -108,13 +108,13 @@ export const Cursor = () => {
     <>
       <motion.div
         style={{ x: dotX, y: dotY, scale: dotScale }}
-        className="pointer-events-none fixed left-0 top-0 z-[90] hidden h-2.5 w-2.5 rounded-full bg-[var(--ink)] lg:block"
+        className="pointer-events-none fixed left-0 top-0 z-[90] hidden h-2.5 w-2.5 rounded-full bg-[var(--ink)] [@media(pointer:fine)]:block"
       />
 
       {/* Parent: position + rotation (aligns local X with movement direction) */}
       <motion.div
         style={{ x, y, rotate: ringRotate }}
-        className="pointer-events-none fixed left-0 top-0 z-[89] hidden h-7 w-7 lg:block"
+        className="pointer-events-none fixed left-0 top-0 z-[89] hidden h-7 w-7 [@media(pointer:fine)]:block"
       >
         {/* Child: squash/stretch happens in the rotated frame */}
         <motion.div
