@@ -7,7 +7,7 @@ export const MobileProjectDetail = ({ project }: { project: Project }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.2 }}
     transition={{ duration: 0.56, ease: [0.22, 1, 0.36, 1] }}
-    className="w-full py-10 first:pt-0 last:pb-0"
+    className="w-full py-20 first:pt-0 last:pb-0"
   >
     <p className="hidden mb-4 text-[10px] uppercase tracking-[.2em] text-[var(--deep)]">
       {project.number} / 04 — {project.type}

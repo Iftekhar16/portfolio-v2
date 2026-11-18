@@ -111,7 +111,7 @@ const HomeView = () => {
           </button>
         ))}
       </nav>
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-6 py-24">
+      <div className="relative z-10 flex min-h-screen items-center justify-center overflow-hidden px-6 py-24">
         <AnimatePresence mode="wait">
           <motion.section
             key={active}

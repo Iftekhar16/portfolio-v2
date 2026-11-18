@@ -13,6 +13,8 @@ export const LenisScroll = () => {
       smoothWheel: true,
       syncTouch: true,
       autoRaf: false,
+      lerp: 0.08,
+      wheelMultiplier: 0.8,
       prevent: (node) => Boolean(node.closest("[data-lenis-prevent]")),
     });
     let frame = 0;
